@@ -20,6 +20,11 @@ class App extends React.Component {
     this.setState({ clients: clients });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log("ça marche");
+  };
+
   render() {
     const title = "Liste des clients";
     return (
@@ -33,7 +38,7 @@ class App extends React.Component {
             </li>
           ))}
         </ul>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Ajouter un Client" />
           <button>Confirmer</button>
         </form>
